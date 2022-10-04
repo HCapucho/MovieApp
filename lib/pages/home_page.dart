@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/controllers/movie_controller.dart';
 import 'package:movieapp/models/movie.dart';
-import 'package:movieapp/repositories/movie_repository.dart';
 import 'package:movieapp/repositories/movie_repository_imp.dart';
 import 'package:movieapp/services/dio_service_imp.dart';
 
@@ -28,7 +27,8 @@ class _HomePageState extends State<HomePage> {
           return movies != null
               ? ListView.builder(
                   itemCount: movies?.listMovies.length,
-                  itemBuilder: (_, idx) => Text(movies.listMovies[idx].title))
+                  itemBuilder: (_, idx) => Text(
+                      'Titulo: ${movies.listMovies[idx].title} --- Nota: ${movies.listMovies[idx].voteAverage}'))
               : Container();
         },
       ),
